@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { StoreApiHelper } from "../../../src/utils/helpers/storeApiHelper";
+import { StoreApiHelper } from "../../../src/utils/helpers/storeApiHelper.ts";
 import { createOrder } from "../../fixtures/api_data/createOrder.ts"; 
 
 test.describe.serial("Store API Tests", () => {

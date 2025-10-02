@@ -6,9 +6,9 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 
-# # Reports
+# Reports
 # allure-report/
-# allure-results/
+allure-results/
 # /test-results/
 # /playwright-report/
 

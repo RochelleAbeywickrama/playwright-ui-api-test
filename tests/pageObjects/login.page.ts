@@ -2,17 +2,17 @@ import { Page, Locator, expect } from '@playwright/test';
 
 export class LoginPage {
   readonly page: Page;
-  readonly usernameInput: Locator;
-  readonly passwordInput: Locator;
-  readonly loginButton: Locator;
-  readonly inventoryList: Locator;
+  readonly txt_username: Locator;
+  readonly txt_password: Locator;
+  readonly btn_login: Locator;
+  readonly list_inventory: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.usernameInput = page.locator('#user-name'); // by id
-    this.passwordInput = page.locator('#password'); // by id
-    this.loginButton = page.locator('#login-button'); // by id
-    this.inventoryList = page.locator('.inventory_list'); // by class name
+    this.txt_username = page.locator('#user-name'); // by id
+    this.txt_password = page.locator('#password'); // by id
+    this.btn_login = page.locator('#login-button'); // by id
+    this.list_inventory = page.locator('.inventory_list'); // by class name
   }
 
   async goto() {
@@ -20,14 +20,14 @@ export class LoginPage {
   }
 
   async login(username: string, password: string) {
-    await this.usernameInput.fill(username);
-    await this.passwordInput.fill(password);
-    await this.loginButton.click();
+    await this.txt_username.fill(username);
+    await this.txt_password.fill(password);
+    await this.btn_login.click();
   }
 
   async assertLoginSuccess() {
     await expect(this.page).toHaveURL(/inventory.html/);
-    await expect(this.inventoryList).toBeVisible();
+    await expect(this.list_inventory).toBeVisible();
   }
   
   async assertLoginFailure() {
