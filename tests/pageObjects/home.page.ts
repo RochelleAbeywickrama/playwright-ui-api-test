@@ -15,16 +15,16 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.page_title = page.locator('.primary_header');
+    this.page_title = page.locator(".primary_header");
     this.div_productCard = page.locator('[data-test="inventory-item-description"]');
-    this.btn_menu = page.locator('#react-burger-menu-btn');
-    this.dd_productSort = page.locator('.product_sort_container');
-    this.lbl_productName = page.locator('.inventory_item_name');
-    this.lnk_cart = page.locator('.shopping_cart_link');
+    this.btn_menu = page.locator("#react-burger-menu-btn");
+    this.dd_productSort = page.locator(".product_sort_container");
+    this.lbl_productName = page.locator(".inventory_item_name");
+    this.lnk_cart = page.locator(".shopping_cart_link");
     this.btn_twitter = page.locator('[data-test="social-twitter"]');
     this.btn_facebook = page.locator('[data-test="social-facebook"]');
     this.btn_linkedin = page.locator('[data-test="social-linkedin"]');
-    this.lbl_footer = page.locator('.footer_copy');
+    this.lbl_footer = page.locator(".footer_copy");
   }
 
   async navigateToHomePage() {
@@ -45,7 +45,7 @@ export class HomePage {
 
   async verifyShoppingCartLink() {
     return await this.lnk_cart.isVisible();
-  } 
+  }
 
   async verifySortingListVisible() {
     return await this.dd_productSort.isVisible();
@@ -55,18 +55,24 @@ export class HomePage {
     return await this.btn_twitter.isVisible();
   }
 
-    async verifyFacebookMediaButtons() {    
+  async verifyFacebookMediaButtons() {
     return await this.btn_facebook.isVisible();
-    }
+  }
 
-    async verifyLinkedinMediaButtons() {
+  async verifyLinkedinMediaButtons() {
     return await this.btn_linkedin.isVisible();
-    }
+  }
 
-    async verifyFooterContent() {
+  async verifyFooterContent() {
     return await this.lbl_footer.isVisible();
   }
-    
+
+  async verifyFooterElements() {
+    expect(await this.verifyTwitterMediaButtons()).toBeTruthy();
+    expect(await this.verifyFacebookMediaButtons()).toBeTruthy();
+    expect(await this.verifyLinkedinMediaButtons()).toBeTruthy();
+    expect(await this.verifyFooterContent()).toBeTruthy();
+  }
 
   async selectSortOption(option: string, expectedText: string) {
     await this.dd_productSort.click();
@@ -87,15 +93,23 @@ export class HomePage {
   }
 
   async verifyPriceLowToHighSorting() {
-    const prices = await this.page.locator('.inventory_item_price').allTextContents();
-    const numericPrices = prices.map(price => parseFloat(price.replace('$', '')));
+    const prices = await this.page
+      .locator(".inventory_item_price")
+      .allTextContents();
+    const numericPrices = prices.map((price) =>
+      parseFloat(price.replace("$", "")),
+    );
     const sortedPrices = [...numericPrices].sort((a, b) => a - b);
     expect(numericPrices).toEqual(sortedPrices);
   }
 
   async verifyPriceHighToLowSorting() {
-    const prices = await this.page.locator('.inventory_item_price').allTextContents();
-    const numericPrices = prices.map(price => parseFloat(price.replace('$', '')));
+    const prices = await this.page
+      .locator(".inventory_item_price")
+      .allTextContents();
+    const numericPrices = prices.map((price) =>
+      parseFloat(price.replace("$", "")),
+    );
     const sortedPrices = [...numericPrices].sort((a, b) => b - a);
     expect(numericPrices).toEqual(sortedPrices);
   }

@@ -21,35 +21,46 @@ test.describe("Home Page Functionality Tests", () => {
     expect(await homePage.verifyShoppingCartLink()).toBeTruthy();
     expect(await homePage.getProductCount()).toBeGreaterThan(0);
     expect(await homePage.verifySortingListVisible()).toBeTruthy();
-    expect(await homePage.verifyTwitterMediaButtons()).toBeTruthy();
-    expect(await homePage.verifyFacebookMediaButtons()).toBeTruthy();
-    expect(await homePage.verifyLinkedinMediaButtons()).toBeTruthy();
-    expect(await homePage.verifyFooterContent()).toBeTruthy();
+    await homePage.verifyFooterElements();
   });
-
 
   test("Verify A to Z Product Sorting Functionality", async ({ page }) => {
     homePage = new HomePage(page);
-    await homePage.selectSortOption(testdata.productSortValues.aToZ, testdata.productSortOptions.aToZ);
+    await homePage.selectSortOption(
+      testdata.productSortValues.aToZ,
+      testdata.productSortOptions.aToZ,
+    );
     await homePage.verifyNameAToZSorting();
   });
 
   test("Verify Z to A Product Sorting Functionality", async ({ page }) => {
     homePage = new HomePage(page);
-    await homePage.selectSortOption(testdata.productSortValues.zToA, testdata.productSortOptions.zToA);
+    await homePage.selectSortOption(
+      testdata.productSortValues.zToA,
+      testdata.productSortOptions.zToA,
+    );
     await homePage.verifyNameZToASorting();
   });
 
-  test("Verify Price Low to High Product Sorting Functionality", async ({ page }) => {
+  test("Verify Price Low to High Product Sorting Functionality", async ({
+    page,
+  }) => {
     homePage = new HomePage(page);
-    await homePage.selectSortOption(testdata.productSortValues.priceLowToHigh, testdata.productSortOptions.priceLowToHigh);
+    await homePage.selectSortOption(
+      testdata.productSortValues.priceLowToHigh,
+      testdata.productSortOptions.priceLowToHigh,
+    );
     await homePage.verifyPriceLowToHighSorting();
   });
 
-  test("Verify Price High to Low Product Sorting Functionality", async ({ page }) => {
+  test("Verify Price High to Low Product Sorting Functionality", async ({
+    page,
+  }) => {
     homePage = new HomePage(page);
-    await homePage.selectSortOption(testdata.productSortValues.priceHighToLow, testdata.productSortOptions.priceHighToLow);
+    await homePage.selectSortOption(
+      testdata.productSortValues.priceHighToLow,
+      testdata.productSortOptions.priceHighToLow,
+    );
     await homePage.verifyPriceHighToLowSorting();
   });
-
 });
