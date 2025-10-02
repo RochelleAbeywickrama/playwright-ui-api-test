@@ -1,4 +1,4 @@
-# UI & API Automation Framework
+# Playwright UI & API Automation Framework
 
 This project demonstrates how to use **Playwright** to automate Web application and API testing using **Typescript (Node.js)**. It follows the **Page Object Model (POM)** for better maintainability and scalability.
 
@@ -8,7 +8,7 @@ This project demonstrates how to use **Playwright** to automate Web application 
 - **Prepared By:** Rochelle Abeywickrama 
 - **Tools:** Playwright & TypeScript 
 - **Design Pattern:** Page Object Model (POM), Data-driven + fixtures 
-- **Reporting:** Playwright HTML Reporter / Allure 
+- **Reporting:** Playwright HTML Reporter + Allure 
 - **Applications Under Test:**  
   - [SauceDemo UI Application](https://www.saucedemo.com/)  
   - [Petstore API Collection](https://petstore.swagger.io/#/)
@@ -23,15 +23,18 @@ This project demonstrates how to use **Playwright** to automate Web application 
 ### Folder Structure:
 ```text
 src/
-   docs/                      << Project docs
-   utils/                     << Helpers, Postman Collection
+   docs/                     << Project docs
+   utils/                    << Helpers, Postman collection
 
+tests/                      
+   pageObject/               << Page objects
+   fixtures/                 << Test data
+   specs/                    << UI & API Test scripts
 
-object_repository/          << Page Objects
-tests/                      << UI & API Test Scripts
-helpers/                    << UI & API Helper classes
-resources/                  << Test Data, Artefacts, Postman Collection
-playwright.config.ts        << Configuration
+playwright-report            << Playwright HTML
+allure-report                << Allure report
+package.json                 << Packages and Dependencies
+playwright.config.ts         << Project configuration
 ```
 
 
@@ -54,14 +57,13 @@ Also, refer to naming standards [naming conventions for project](resources/artef
 
 1. **Clone the Repository**
    ```sh
-   git clone <url>
+   git clone https://github.com/RochelleAbeywickrama/playwright-ui-api-test.git
    ```
 
 2. **Install Dependencies**
    ```sh
    npm install
    ```
-
 
 ---
 
