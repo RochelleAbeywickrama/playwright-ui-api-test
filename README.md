@@ -6,8 +6,10 @@ This project demonstrates how to use **Playwright** to automate Web application 
 ## Project Information
 - **Project:** SauceDemo Application & PetStore API Testing  
 - **Prepared By:** Rochelle Abeywickrama 
-- **Test Design Tool:** Mindmap using [XMind](https://xmind.com/download)
-- **Testcases:** 
+- **Test Design Tool:** Mindmap using [XMind](https://xmind.com/download) (check [artifacts](artifacts/test-designs))
+- **Test Plan and Tests:** 
+   - [UI Test plan](artifacts/test-plans/ui_testplan.md)
+   - [API Test plan](artifacts/test-plans/api_testplan.md)
 - **Automation Tools:** Playwright & TypeScript 
 - **Design Pattern:** Page Object Model (POM), Data-driven + fixtures 
 - **Reporting:** Playwright HTML Reporter + Allure 
