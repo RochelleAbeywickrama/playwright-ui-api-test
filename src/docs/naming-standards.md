@@ -10,9 +10,6 @@
   
 
 
-
-
-
 ## 🏷️ Standards and Guidelines
 ### 1️⃣ **Test Files**
 - Test files should be named in **camelCase** and end with `.page.ts` for Page Object classes and `.spec.ts` for Test specs.

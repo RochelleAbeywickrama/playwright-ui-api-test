@@ -10,8 +10,8 @@
     "run:test:debug": "playwright test --debug",
     "run:test:report": "playwright test --reporter=html",
     "run:test:trace": "playwright test --trace on",
-    "run:chromium": "playwright test tests/specs/ui-test --project=ui --project=chromium",
-    "run:firefox": "playwright test tests/specs/ui-test --project=ui --project=firefox",
+    "run:chromium": "playwright test tests/specs/ui-test --project=chromium",
+    "run:firefox": "playwright test tests/specs/ui-test --project=firefox",
     "run:ui": "playwright test --ui",
     "allure:report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
   },

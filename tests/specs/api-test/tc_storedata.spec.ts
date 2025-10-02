@@ -32,20 +32,16 @@ test("Test - Retrieve Store Inventory", async ({ request }) => {
   });
 
 
-  test("Test - Retrieve Order by ID", async ({
+  test("Test - Retrieve the created order using the stored ID", async ({
     request,
   }) => {
     storeHelper = new StoreApiHelper(request);
-
-    // Retrieve the created order using the stored ID
     const getOrderResponse = await storeHelper.getOrderById(createOrderId);
     expect(getOrderResponse.id).toBe(createOrderId);
   });
 
-  test("Test - Delete Order by ID", async ({ request }) => {
+  test("Test - Delete the created order using the stored ID", async ({ request }) => {
     storeHelper = new StoreApiHelper(request);
-
-    // Delete the created order using the stored ID
    const response = await storeHelper.deleteOrderById(createOrderId);
    expect(response).toHaveProperty('code');
   expect(response).toHaveProperty('type');
