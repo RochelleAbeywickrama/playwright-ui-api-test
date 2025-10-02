@@ -15,13 +15,15 @@ test.describe('Login Functionality Tests', () => {
     await loginPage.assertLoginSuccess();
   });
 
-  test('Verify login with valid locked out user', async () => {
+  test('Verify login with locked out user', async () => {
     await loginPage.login(users.locked_user.username, users.locked_user.password);
-    await loginPage.assertLoginFailure();
+    await loginPage.assertLockedUserLoginFailure();
   });
 
-  test('Verify login with problematic user', async () => {
-    await loginPage.login(users.problem_user.username, users.problem_user.password);
-    await loginPage.assertLoginSuccess();
+  test('Verify login with invalid user credentials', async () => {
+    await loginPage.login(users.standard_user.username, 'wrong_password');
+    await loginPage.assertLoginFailure();
+    await loginPage.login('wrong_username', users.standard_user.password);
+    await loginPage.assertLoginFailure();
   });
 });

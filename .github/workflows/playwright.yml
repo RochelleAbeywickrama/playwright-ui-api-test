@@ -19,8 +19,6 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npm run run:ui:test
-    - name: Generate Playwright Report
-      run: npm run generate:report
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:

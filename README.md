@@ -88,17 +88,19 @@ Generate Allure report locally:
    npm run allure:report
    ```
 
-
-
+![allure-dashboard.png](src/docs/allure_report.png)
 
 
 ## 🔗 Reference
 
 **Reading materials & Downloads:**
 
-- [Playwright Docs](https://playwright.dev/docs/best-practices)
+- [Playwright Docs](https://playwright.dev/docs/intro)
+- [Playwright Best Practices](https://playwright.dev/docs/best-practices)
 - [Playwright Video Guides](https://www.youtube.com/@Playwrightdev)
 - [VSCode Download](https://code.visualstudio.com/download)
+- [Configure Allure Reporting](https://allurereport.org/docs/playwright/)
+- [Setting up CI](https://playwright.dev/docs/ci-intro)
 
 
 ---
