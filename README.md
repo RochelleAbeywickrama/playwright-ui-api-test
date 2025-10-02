@@ -91,6 +91,16 @@ Generate Allure report locally:
 ![allure-dashboard.png](src/docs/allure_report.png)
 
 
+Generate Playwright HTML Report locally:
+   ```sh
+   npm run generate:report
+   ```
+
+![playwright_report.png](src/docs/playwright_report.png)
+
+
+
+
 ## 🔗 Reference
 
 **Reading materials & Downloads:**
