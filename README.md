@@ -48,7 +48,7 @@ Ensure you have the following installed on your system:
 - [VSCode](https://code.visualstudio.com/download) or any prefered IDE
 
 
-Also, refer to naming standards [naming conventions for project](resources/artefacts/naming-standards.md)
+Also, refer to naming standards [naming conventions for project](src/docs/naming-standards.md)
 
 
 ---
