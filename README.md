@@ -20,7 +20,7 @@ This project demonstrates how to use **Playwright** to automate Web application 
 
 
 
-### Folder Structure:
+### Project Structure:
 ```text
 src/
    docs/                     << Project docs
@@ -31,7 +31,7 @@ tests/
    fixtures/                 << Test data
    specs/                    << UI & API Test scripts
 
-playwright-report            << Playwright HTML
+playwright-report            << Playwright HTML report
 allure-report                << Allure report
 package.json                 << Packages and Dependencies
 playwright.config.ts         << Project configuration
