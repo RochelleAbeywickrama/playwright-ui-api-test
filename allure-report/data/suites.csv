@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","614","Verify login with valid standard user","ui","Thu Oct 02 16:46:41 EEST 2025","passed","Thu Oct 02 16:46:41 EEST 2025","Login Functionality Tests","specs/ui_test/tc_userlogin.spec.ts","",""
+"","618","Verify login with problematic user","ui","Thu Oct 02 16:46:41 EEST 2025","passed","Thu Oct 02 16:46:41 EEST 2025","Login Functionality Tests","specs/ui_test/tc_userlogin.spec.ts","",""
+"","1202","Verify login with valid standard user","firefox","Thu Oct 02 16:46:41 EEST 2025","passed","Thu Oct 02 16:46:42 EEST 2025","Login Functionality Tests","specs/ui_test/tc_userlogin.spec.ts","",""
+"","1204","Verify login with valid locked out user","firefox","Thu Oct 02 16:46:41 EEST 2025","passed","Thu Oct 02 16:46:42 EEST 2025","Login Functionality Tests","specs/ui_test/tc_userlogin.spec.ts","",""
+"","615","Verify login with valid locked out user","ui","Thu Oct 02 16:46:41 EEST 2025","passed","Thu Oct 02 16:46:41 EEST 2025","Login Functionality Tests","specs/ui_test/tc_userlogin.spec.ts","",""
+"","1222","Verify login with problematic user","firefox","Thu Oct 02 16:46:41 EEST 2025","passed","Thu Oct 02 16:46:42 EEST 2025","Login Functionality Tests","specs/ui_test/tc_userlogin.spec.ts","",""

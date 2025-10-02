@@ -1,0 +1,27 @@
+{
+  "name": "ui-api-test-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "generate:report": "playwright show-report",
+    "run:ui:test": "playwright test tests/specs/ui_test --project=ui",
+    "run:api:test": "playwright test tests/specs/api_test --project=api",
+    "run:test:headed": "playwright test --headed",
+    "run:test:debug": "playwright test --debug",
+    "run:test:report": "playwright test --reporter=html",
+    "run:test:trace": "playwright test --trace on",
+    "run:chromium": "playwright test tests/specs/ui_test --project=ui --project=chromium",
+    "run:firefox": "playwright test tests/specs/ui_test --project=ui --project=firefox",
+    "run:ui": "playwright test --ui",
+    "allure:report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.6.0",
+    "allure-playwright": "^3.4.1"
+  }
+}
