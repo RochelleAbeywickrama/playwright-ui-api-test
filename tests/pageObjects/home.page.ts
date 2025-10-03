@@ -1,4 +1,5 @@
 import { Page, Locator, expect } from "@playwright/test";
+import { AddToCartPage } from "./addtocart.page";
 
 export class HomePage {
   readonly page: Page;
@@ -12,6 +13,8 @@ export class HomePage {
   readonly btn_facebook: Locator;
   readonly btn_linkedin: Locator;
   readonly lbl_footer: Locator;
+  readonly btn_addToCart: Locator;
+  readonly txt_productTitle: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -25,6 +28,8 @@ export class HomePage {
     this.btn_facebook = page.locator('[data-test="social-facebook"]');
     this.btn_linkedin = page.locator('[data-test="social-linkedin"]');
     this.lbl_footer = page.locator(".footer_copy");
+    this.btn_addToCart = page.locator('#add-to-cart-sauce-labs-backpack');
+    this.txt_productTitle = page.locator('#item_4_title_link');
   }
 
   async navigateToHomePage() {
@@ -112,5 +117,15 @@ export class HomePage {
     );
     const sortedPrices = [...numericPrices].sort((a, b) => b - a);
     expect(numericPrices).toEqual(sortedPrices);
+  }
+
+  async getProductName() {
+    return await this.lbl_productName.textContent();
+  }
+  
+  async addToCart(): Promise<AddToCartPage>{
+    expect(await this.txt_productTitle.isVisible()).toBeTruthy();
+    await this.btn_addToCart.click();
+    return new AddToCartPage(this.page);
   }
 }
