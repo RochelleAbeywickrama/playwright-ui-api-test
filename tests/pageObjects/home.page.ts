@@ -120,9 +120,9 @@ export class HomePage {
   }
 
   async getProductName() {
-    return await this.lbl_productName.textContent();
+    return await this.lbl_productName.first().textContent();
   }
-  
+
   async addToCart(): Promise<AddToCartPage>{
     expect(await this.txt_productTitle.isVisible()).toBeTruthy();
     await this.btn_addToCart.click();

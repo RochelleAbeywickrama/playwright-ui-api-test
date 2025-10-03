@@ -10,5 +10,13 @@ export const testdata = {
     zToA: "za",
     priceLowToHigh: "lohi",
     priceHighToLow: "hilo"
+  },
+  productInfo: {
+    productName: "Sauce Labs Backpack"
+  },
+  checkoutInfo: {
+    firstName: "Rochelle",
+    lastName: "Test",
+    postalCode: "12345"
   }
 };

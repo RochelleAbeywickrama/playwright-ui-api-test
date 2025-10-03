@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import { HomePage } from "../../pageObjects/home.page";
 import { LoginPage } from "../../pageObjects/login.page";
 import { testdata } from "../../fixtures/ui_data/testdata";
+import { users } from "../../fixtures/ui_data/users";
 
 test.describe("Home Page Functionality Tests", () => {
   let loginPage: LoginPage;
@@ -10,7 +11,7 @@ test.describe("Home Page Functionality Tests", () => {
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     await loginPage.goto(); // Navigate to the login page before each test
-    await loginPage.login("standard_user", "secret_sauce"); // Perform login before each test
+    await loginPage.login(users.standard_user.username, users.standard_user.password); // Perform login before each test
     await loginPage.assertLoginSuccess();
   });
 

@@ -60,16 +60,6 @@ test.describe.serial("Verify Pet API Functionality", () => {
     console.log("Retrieve Pet by invalid data response:", response);
   });
 
-  test("Test - Delete the created pet using the stored ID", async ({ request }) => {
-    petHelper = new PetApiHelper(request);
-    const response = await petHelper.deletePetById(request, createdPetId);
-    expect(response).toHaveProperty("code");
-    expect(response).toHaveProperty("type");
-    expect(response).toHaveProperty("message");
-    expect(response.message).toContain(createdPetId);
-    console.log("Delete Pet response:", response);
-  });
-
   test("Test - Create Pet with invalid pet data", async ({ request }) => {
     petHelper = new PetApiHelper(request);
     const response = await petHelper.addInvalidPetData(createInvalidPet);
@@ -77,5 +67,15 @@ test.describe.serial("Verify Pet API Functionality", () => {
     expect(response).toHaveProperty("type");
     expect(response).toHaveProperty("message");
     console.log("Create Pet with invalid data Response:", response);
+  });
+
+  test("Test - Delete the created pet using the stored ID", async ({ request }) => {
+    petHelper = new PetApiHelper(request);
+    const response = await petHelper.deletePetById(request, createdPetId);
+    expect(response).toHaveProperty("code");
+    expect(response).toHaveProperty("type");
+    expect(response).toHaveProperty("message");
+    expect(response.message).toContain(createdPetId.toString);
+    console.log("Delete Pet response:", response);
   });
 });

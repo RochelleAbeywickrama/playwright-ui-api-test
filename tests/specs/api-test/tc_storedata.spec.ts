@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { StoreApiHelper } from "../../../src/utils/helpers/storeApiHelper.ts";
 import { createOrder } from "../../fixtures/api_data/createOrder.ts"; 
 
-test.describe.serial("Store API Tests", () => {
+test.describe.serial("Verify Store API Functionality", () => {
   let storeHelper: StoreApiHelper;
   let createOrderId = Math.floor(1000 + Math.random() * 9000); //  Global variable - random 4-digit id
 
@@ -30,7 +30,6 @@ test("Test - Retrieve Store Inventory", async ({ request }) => {
     expect(inventoryResponse).toHaveProperty("pending");
     expect(inventoryResponse).toHaveProperty("sold");
   });
-
 
   test("Test - Retrieve the created order using the stored ID", async ({
     request,
